@@ -69,19 +69,6 @@
       font-size: 1.5rem;
       margin-top: 1rem;
     }
-    .links a {
-      text-decoration: none;
-      color: #f1c40f;
-      margin-right: 20px;
-      font-size: 1.3rem;
-      transition: transform 0.3s;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-    .links a:hover {
-      transform: scale(1.1);
-    }
-
     .hero-img-wrapper {
       flex: 1 1 30%;
       display: flex;
@@ -114,7 +101,6 @@
       50%  { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
-
     .container {
       padding: 3rem;
       max-width: 1200px;
@@ -169,6 +155,82 @@
       background: #d4ac0d;
     }
 
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      scroll-behavior: smooth;
+    }
+    .scroll-item {
+      min-width: 160px;
+      background-color: #1c1c1c;
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+      text-align: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .scroll-item img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+    .scroll-item p {
+      font-size: 1rem;
+      color: #f1f1f1;
+    }
+    .scroll-item:hover {
+      transform: scale(1.05);
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #f1c40f;
+      border-radius: 10px;
+    }
+
+    .social-section {
+      background: #111;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    .social-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 1rem auto;
+      font-size: 1.3rem;
+    }
+    .social-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      transition: transform 0.3s;
+    }
+    .social-item img:hover {
+      transform: scale(1.2);
+    }
+    .social-item a {
+      color: white;
+      text-decoration: none;
+    }
+
     @media (max-width: 768px) {
       .hero-container {
         flex-direction: column;
@@ -189,12 +251,13 @@
       .hero-text p {
         font-size: 1.2rem;
       }
-      .links a {
-        font-size: 1.1rem;
-      }
       .hero-img {
         width: 160px;
         height: 160px;
+      }
+      .social-item {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -205,11 +268,6 @@
       <h2>Hi, I’m</h2>
       <h1>MUHAMAD <span class="ridho">RIDHO</span></h1>
       <p>Frontend Developer & Creative Coder</p>
-      <div class="links">
-        <a href="https://www.instagram.com/idhe.io" target="_blank">Instagram</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">TikTok</a>
-      </div>
     </div>
     <div class="hero-img-wrapper">
       <div class="hero-img" id="profileImg">
@@ -236,19 +294,36 @@
 
     <section class="section">
       <h2>Project Saya</h2>
-      <div class="card">
-        <h3>Website Portfolio</h3>
-        <button class="btn">Lihat Detail</button>
-      </div>
-      <div class="card">
-        <h3>Aplikasi To-Do List</h3>
-        <button class="btn">Lihat Detail</button>
-      </div>
-      <div class="card">
-        <h3>Toko Online Mini</h3>
-        <button class="btn">Lihat Detail</button>
+      <div class="card"><h3>Website Portfolio</h3><button class="btn">Lihat Detail</button></div>
+      <div class="card"><h3>Aplikasi To-Do List</h3><button class="btn">Lihat Detail</button></div>
+      <div class="card"><h3>Toko Online Mini</h3><button class="btn">Lihat Detail</button></div>
+    </section>
+
+    <section class="section">
+      <h2>Pilihan</h2>
+      <div class="scroll-container">
+        <div class="scroll-item"><img src="kategori1.jpg" alt="Kategori 1"><p>Tempe Sambal</p></div>
+        <div class="scroll-item"><img src="kategori2.jpg" alt="Kategori 2"><p>Tempe Lalapan</p></div>
+        <div class="scroll-item"><img src="kategori3.jpg" alt="Kategori 3"><p>Tempe</p></div>
+        <div class="scroll-item"><img src="kategori4.jpg" alt="Kategori 4"><p>Tempe Kriuk</p></div>
+        <div class="scroll-item"><img src="kategori5.jpg" alt="Kategori 5"><p>Tempe Daun</p></div>
       </div>
     </section>
+  </div>
+
+  <div class="social-section">
+    <div class="social-item">
+      <img src="ig.jpg" alt="Instagram" id="logoIg">
+      <a href="https://www.instagram.com/Idhoe.oi" target="_blank">@Idhoe.oi</a>
+    </div>
+    <div class="social-item">
+      <img src="wa.jpg" alt="WhatsApp">
+      <a href="https://wa.me/6285814688019" target="_blank">Contact: +62 85814688019</a>
+    </div>
+    <div class="social-item">
+      <img src="tt.jpg" alt="TikTok">
+      <span>Idhoooei</span>
+    </div>
   </div>
 
   <script>
@@ -259,6 +334,10 @@
         profileImg.classList.remove("active");
       }, 500);
     });
+
+    const logoIg = document.getElementById("logoIg");
+    logoIg.style.width = "40px";
+    logoIg.style.height = "40px";
   </script>
 </body>
 </html>
